@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://ckvp5fw6417v"]
 
-[ext_resource type="Environment" path="res://GoodLookingEnvironment.tres" id="1_lnbyx"]
+[ext_resource type="Environment" uid="uid://birs2js8kjix2" path="res://GoodLookingEnvironment.tres" id="1_lnbyx"]
 [ext_resource type="ArrayMesh" uid="uid://f8xtehdgavi1" path="res://obj/testmap.obj" id="2_dob0p"]
 [ext_resource type="ArrayMesh" uid="uid://c0wppnsg0kkga" path="res://obj/cube.obj" id="3_c60b8"]
 [ext_resource type="ArrayMesh" uid="uid://tq0e8vvv801j" path="res://obj/finish.obj" id="3_dk6c6"]
@@ -23,42 +23,42 @@ data = PackedVector3Array(-0.8, 1.2, -0.8, -0.8, 1.4, 0.6, -0.8, 1.2, 0.8, -0.8,
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_lnbyx")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="testMap" type="Node3D" parent="."]
 
-[node name="floor" type="StaticBody3D" parent="Node3D"]
+[node name="floor" type="StaticBody3D" parent="testMap"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/floor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="testMap/floor"]
 mesh = ExtResource("2_dob0p")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="testMap/floor"]
 shape = SubResource("ConcavePolygonShape3D_rrinj")
 
-[node name="finish" type="StaticBody3D" parent="Node3D"]
+[node name="finish" type="StaticBody3D" parent="testMap"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/finish"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="testMap/finish"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23595, -1.87533, 0)
 mesh = ExtResource("3_dk6c6")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/finish"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="testMap/finish"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.23595, -1.87533, 0)
 shape = SubResource("ConcavePolygonShape3D_r6u0b")
 
-[node name="checkpoint" type="StaticBody3D" parent="Node3D"]
+[node name="checkpoint" type="StaticBody3D" parent="testMap"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/checkpoint"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="testMap/checkpoint"]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 6.73687, -0.690931, 0)
 mesh = ExtResource("4_r3q04")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/checkpoint"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="testMap/checkpoint"]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 6.73687, -0.690931, 0)
 shape = SubResource("ConcavePolygonShape3D_h2j3x")
 
-[node name="cube" type="StaticBody3D" parent="Node3D"]
+[node name="cube" type="StaticBody3D" parent="testMap"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/cube"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="testMap/cube"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.909751, 5.42137)
 mesh = ExtResource("3_c60b8")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/cube"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="testMap/cube"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.909751, 5.42137)
 shape = SubResource("ConcavePolygonShape3D_ei4xe")
