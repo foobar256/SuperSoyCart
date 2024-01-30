@@ -1,0 +1,75 @@
+[gd_scene load_steps=14 format=3 uid="uid://ckvp5fw6417v"]
+
+[ext_resource type="ArrayMesh" uid="uid://516eypyhipc6" path="res://cube2.obj" id="1_76ynx"]
+[ext_resource type="PackedScene" uid="uid://80jvbnyw7t15" path="res://cube.glb" id="2_4my5q"]
+[ext_resource type="ArrayMesh" uid="uid://b6ungp1nrf0ka" path="res://cube.obj" id="3_c60b8"]
+[ext_resource type="ArrayMesh" uid="uid://cvjyt5alrmdhe" path="res://untitled.obj" id="4_7usnf"]
+[ext_resource type="PackedScene" uid="uid://57y55n61iklw" path="res://cube.dae" id="5_e13jh"]
+[ext_resource type="ArrayMesh" uid="uid://bbda6oj0nfo50" path="res://cars-0.obj" id="6_rk0fc"]
+[ext_resource type="ArrayMesh" uid="uid://dl7veag4y5eux" path="res://cube-pink.obj" id="7_iyxwh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5q7ho"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kspmj"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nmrbv"]
+size = Vector2(10, 10)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_yya37"]
+
+[sub_resource type="Sky" id="Sky_46v5g"]
+sky_material = SubResource("PanoramaSkyMaterial_yya37")
+
+[sub_resource type="Environment" id="Environment_8pjky"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.44
+sky = SubResource("Sky_46v5g")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 5.35
+tonemap_mode = 2
+tonemap_exposure = 3.25
+tonemap_white = 8.52
+
+[node name="Stage1" type="Node3D"]
+
+[node name="Cube2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.160897, 0.398883, -0.399386)
+mesh = ExtResource("1_76ynx")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.584807, 1.20357, 11.381)
+
+[node name="cube" parent="." instance=ExtResource("2_4my5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20245, 0)
+mesh = SubResource("BoxMesh_5q7ho")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.24079, 0)
+material_override = SubResource("ShaderMaterial_kspmj")
+mesh = SubResource("PlaneMesh_nmrbv")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8pjky")
+
+[node name="Cube3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.93703, 0, -5.37564)
+mesh = ExtResource("3_c60b8")
+
+[node name="Untitled" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52125, 0, 6.2054)
+mesh = ExtResource("4_7usnf")
+
+[node name="cube2" parent="." instance=ExtResource("5_e13jh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.58409, 1.95345, 6.92968)
+
+[node name="Cars-0" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48551, 0, 11.6708)
+mesh = ExtResource("6_rk0fc")
+
+[node name="Cube-pink" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.775795, 0, 7.57952)
+mesh = ExtResource("7_iyxwh")
