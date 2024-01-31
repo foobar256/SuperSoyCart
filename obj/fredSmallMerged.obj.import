@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://muofex4ne4hx"
+path="res://.godot/imported/fredSmallMerged.obj-9252d6dfe2a852d758ec81a40559f3ed.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fredSmallMerged.obj-9252d6dfe2a852d758ec81a40559f3ed.mesh"]
+
+source_file="res://obj/fredSmallMerged.obj"
+dest_files=["res://.godot/imported/fredSmallMerged.obj-9252d6dfe2a852d758ec81a40559f3ed.mesh", "res://.godot/imported/fredSmallMerged.obj-9252d6dfe2a852d758ec81a40559f3ed.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
