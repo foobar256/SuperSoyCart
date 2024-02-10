@@ -1,8 +1,0 @@
-newmtl fred.mtl_opaque
-Ka 1.0 1.0 1.0 
-Kd 1.0 1.0 1.0 
-illum 3
-map_Ka fred_col.png
-map_Kd fred_col.png
-map_Pm fred_metal.png
-map_Pr fred_rough.png

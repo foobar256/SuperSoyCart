@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://buxkhbjce1aad"]
+
+[ext_resource type="PackedScene" uid="uid://dhnadsyxcy4e3" path="res://scenes/oliver.tscn" id="1_hyxag"]
+[ext_resource type="PackedScene" uid="uid://cfy8ukm7ugau2" path="res://scenes/cube.tscn" id="2_vl52x"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7mqrm"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pyymj"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="oliver" parent="." instance=ExtResource("1_hyxag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.5464, 5.08905, 14.3568)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(147.2, 0, 0, 0, 7.36, 0, 0, 0, 147.2, 0, 0.381263, 0)
+mesh = SubResource("BoxMesh_7mqrm")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pyymj")
+
+[node name="Cube" parent="." instance=ExtResource("2_vl52x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.294138, 0)

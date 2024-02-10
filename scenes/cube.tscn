@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfy8ukm7ugau2"]
+
+[ext_resource type="Script" path="res://scenes/cube.gd" id="1_3iva4"]
+[ext_resource type="ArrayMesh" uid="uid://c0wppnsg0kkga" path="res://obj/cube.obj" id="1_twijh"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_s2kj0"]
+points = PackedVector3Array(-0.8, 1.2, -0.8, -0.8, 1.2, 0.8, -0.8, 2.79984, -0.8, 0.8, 1.2, -0.8, -0.8, 2.79984, 0.8, 0.8, 1.2, 0.8, 0.8, 2.79984, -0.8, 0.8, 2.79984, 0.8)
+
+[node name="Cube" type="StaticBody3D"]
+script = ExtResource("1_3iva4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.5705, 3.15217, 4.75165)
+mesh = ExtResource("1_twijh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.5705, 3.15217, 4.75165)
+shape = SubResource("ConvexPolygonShape3D_s2kj0")
