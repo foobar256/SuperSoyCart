@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://buxkhbjce1aad"]
+[gd_scene load_steps=8 format=3 uid="uid://buxkhbjce1aad"]
 
 [ext_resource type="PackedScene" uid="uid://dhnadsyxcy4e3" path="res://scenes/oliver.tscn" id="1_hyxag"]
 [ext_resource type="PackedScene" uid="uid://cfy8ukm7ugau2" path="res://scenes/cube.tscn" id="2_vl52x"]
+[ext_resource type="PackedScene" uid="uid://bi2b7jhq4u7uy" path="res://scenes/checkpoint.tscn" id="3_r5brd"]
+[ext_resource type="PackedScene" uid="uid://b72806o855chw" path="res://scenes/global_variables.tscn" id="4_ya0r5"]
+[ext_resource type="PackedScene" uid="uid://llonxox4t8nt" path="res://obj/finish.tscn" id="5_q07i5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7mqrm"]
 
@@ -10,8 +13,8 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [node name="Node3D" type="Node3D"]
 
-[node name="oliver" parent="." instance=ExtResource("1_hyxag")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.5464, 5.08905, 14.3568)
+[node name="oliver" parent="." groups=["vehicles"] instance=ExtResource("1_hyxag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.5464, 4.62538, 14.3568)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(147.2, 0, 0, 0, 7.36, 0, 0, 0, 147.2, 0, 0.381263, 0)
@@ -23,5 +26,13 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_pyymj")
 
-[node name="Cube" parent="." instance=ExtResource("2_vl52x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.294138, 0)
+[node name="Cube" parent="." groups=["powerup"] instance=ExtResource("2_vl52x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.3661, 2.89993, 6.49058)
+
+[node name="Checkpoint" parent="." instance=ExtResource("3_r5brd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.8468, 2.0515, 3.24348)
+
+[node name="GlobalVariables" parent="." instance=ExtResource("4_ya0r5")]
+
+[node name="Finish" parent="." instance=ExtResource("5_q07i5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0229, 2.09107, 20.0125)

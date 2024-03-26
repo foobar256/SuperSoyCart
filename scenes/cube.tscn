@@ -3,16 +3,22 @@
 [ext_resource type="Script" path="res://scenes/cube.gd" id="1_3iva4"]
 [ext_resource type="ArrayMesh" uid="uid://c0wppnsg0kkga" path="res://obj/cube.obj" id="1_twijh"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_s2kj0"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_10lmu"]
 points = PackedVector3Array(-0.8, 1.2, -0.8, -0.8, 1.2, 0.8, -0.8, 2.79984, -0.8, 0.8, 1.2, -0.8, -0.8, 2.79984, 0.8, 0.8, 1.2, 0.8, 0.8, 2.79984, -0.8, 0.8, 2.79984, 0.8)
 
-[node name="Cube" type="StaticBody3D"]
+[node name="Cube" type="Node3D"]
 script = ExtResource("1_3iva4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.5705, 3.15217, 4.75165)
-mesh = ExtResource("1_twijh")
+[node name="Area3D" type="Area3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.5705, 3.15217, 4.75165)
-shape = SubResource("ConvexPolygonShape3D_s2kj0")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("ConvexPolygonShape3D_10lmu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = ExtResource("1_twijh")
+skeleton = NodePath("../..")
+
+[node name="RespawnTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

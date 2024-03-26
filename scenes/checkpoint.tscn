@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi2b7jhq4u7uy"]
+
+[ext_resource type="Script" path="res://scenes/checkpoint.gd" id="1_egian"]
+[ext_resource type="ArrayMesh" uid="uid://dvletsnb2qyem" path="res://obj/checkpoint.obj" id="1_l8sh3"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_spstr"]
+points = PackedVector3Array(-12.8, 2, -1.6, -12.8, 2, 1.59995, -12.8, 2.09998, -1.6, 12.8, 2, -1.6, -12.8, 2.09998, 1.59995, 12.8, 2, 1.59995, -6.30227, 2.2, -0.500252, -6.1018, 2.2, -0.900246, -5.70086, 2.2, -1.10009, -4.70102, 2.2, -1.20032, 12.8, 2.09998, -1.6, -5.8011, 2.2, 0.59981, -6.00157, 2.2, 0.49989, -6.1018, 2.2, 0.39997, -6.20204, 2.2, 0.299736, -6.30227, 2.2, 0.0998958, 12.8, 2.09998, 1.59995, 0.598904, 2.2, 1.19996, 3.89914, 2.2, -1.20032, 6.0993, 2.2, -1.00017, 6.39749, 2.2, -0.600172, 6.39749, 2.2, 0.59981, 0.899608, 2.2, 1.19996)
+
+[node name="Area3D" type="Area3D" groups=["checkpoints"]]
+script = ExtResource("1_egian")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_l8sh3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_spstr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
