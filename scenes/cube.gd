@@ -12,11 +12,12 @@ func _ready():
 
 func _on_area_3d_body_entered(body):
 	print("Collision detected with body:", body.name)
+	
 	if body.is_in_group("vehicles"):
 		print("Cube collided with vehicle:", body.name)
 		cube_visible = false
 		mesh_instance.visible = false
-		collision_shape.disabled = true
+		call_deferred("set_collision_shape_disabled", true)
 		print("Starting respawn timer...")
 		$RespawnTimer.start(respawn_timer)
 	else:
@@ -26,5 +27,8 @@ func _on_respawn_timer_timeout():
 	print("Respawn timer timeout!")
 	cube_visible = true
 	mesh_instance.visible = true
-	collision_shape.disabled = false
+	call_deferred("set_collision_shape_disabled", false)
 	print("Cube respawned!")
+
+func set_collision_shape_disabled(value):
+	collision_shape.disabled = value

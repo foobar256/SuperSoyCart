@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://de10pbxo6jd54"]
+
+[ext_resource type="Script" path="res://scenes/GUI.gd" id="1_icirw"]
+[ext_resource type="Texture2D" uid="uid://djjyo5sjjpb38" path="res://sprite/item-holder.png" id="1_t25cd"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_icirw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 106.0
+offset_bottom = 106.0
+texture = ExtResource("1_t25cd")
+
+[node name="LapLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 981.0
+offset_top = 566.0
+offset_right = 1149.0
+offset_bottom = 648.0
+
+[node name="CheckpointLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 554.0
+offset_right = 372.0
+offset_bottom = 649.0

@@ -33,7 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.3661, 2.89993, 6.49058)
 [node name="GUI" parent="." instance=ExtResource("6_0ng37")]
 
 [node name="Checkpoint" parent="." instance=ExtResource("3_r5brd")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 52.8468, 5.63774, 0.86012)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.8468, 2.0515, 3.24348)
 
 [node name="Finish" parent="." instance=ExtResource("5_q07i5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0229, 2.09107, 20.0125)
