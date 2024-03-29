@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://buxkhbjce1aad"]
+[gd_scene load_steps=10 format=3 uid="uid://buxkhbjce1aad"]
 
+[ext_resource type="Script" path="res://scenes/test.gd" id="1_3qrkv"]
 [ext_resource type="PackedScene" uid="uid://dhnadsyxcy4e3" path="res://scenes/oliver.tscn" id="1_hyxag"]
 [ext_resource type="PackedScene" uid="uid://cfy8ukm7ugau2" path="res://scenes/cube.tscn" id="2_vl52x"]
 [ext_resource type="PackedScene" uid="uid://bi2b7jhq4u7uy" path="res://scenes/checkpoint.tscn" id="3_r5brd"]
@@ -13,18 +14,19 @@
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_3qrkv")
 
 [node name="oliver" parent="." groups=["vehicles"] instance=ExtResource("1_hyxag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.5464, 4.62538, 14.3568)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(147.2, 0, 0, 0, 7.36, 0, 0, 0, 147.2, 0, 0.381263, 0)
 mesh = SubResource("BoxMesh_7mqrm")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_pyymj")
 
 [node name="Cube" parent="." groups=["powerup"] instance=ExtResource("2_vl52x")]
